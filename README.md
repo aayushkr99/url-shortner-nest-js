@@ -86,6 +86,9 @@ Utilizes URL shortening algorithms for optimized storage and retrieval efficienc
 Scalable architecture to handle high volumes of requests with minimal latency.
 
 
+NOTE: Run the Docker compose file by command "docker-compose up -d" as it will start the Database container. 
+
+
 User Authentication and Authorization:
 
 Implements secure user authentication and authorization.
