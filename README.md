@@ -86,7 +86,13 @@ Utilizes URL shortening algorithms for optimized storage and retrieval efficienc
 Scalable architecture to handle high volumes of requests with minimal latency.
 
 
-NOTE: Run the Docker compose file by command "docker-compose up -d" as it will start the Database container. 
+STEPS:-> 
+git clone : https://github.com/aayushkr99/url-shortner-nest-js.git
+cd url-shortner-nest-js
+docker-compose up --build -d
+
+
+NOTE: Run the Docker Compose file by command ( in the root directory ) "docker-compose up --build -d" as it will start running all the services and container. 
 
 
 User Authentication and Authorization:
