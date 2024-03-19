@@ -71,3 +71,75 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+
+
+URL Shortener Service
+This is a sophisticated URL shortening service developed using Nest.js and TypeScript. It not only shortens URLs but also provides detailed analytics to track various metrics related to URL clicks.
+
+Features
+Backend Development:
+
+Built with Nest.js and TypeScript for a robust and efficient backend.
+Utilizes URL shortening algorithms for optimized storage and retrieval efficiency.
+Scalable architecture to handle high volumes of requests with minimal latency.
+
+
+User Authentication and Authorization:
+
+Implements secure user authentication and authorization.
+Each user has access only to their URLs and associated analytics.
+
+
+Data Management:
+
+Database: PostgreSQL is used for data storage to ensure data integrity and efficient querying.
+Redis caching is implemented to enhance the performance of URL retrieval.
+
+
+Advanced Analytics:
+
+Detailed analytics system tracks:
+Number of clicks
+Referral sources
+Browser and device types used to access the URLs
+Provides API endpoints to access these analytics.
+
+
+API Documentation: 
+signup : URL : localhost:4000/auth/signup ( POST ) 
+         Body : {
+    "username" : "aayush",
+    "email" : "aayushiii243@gmail.com",
+    "password" : "123"
+}
+
+loginin : URL : localhost:4000/auth/login ( POST ) 
+      Body :  {
+    "email" : "aayushiii243@gmail.com",
+    "password" : "123"
+}
+
+shortenUrl : URL : localhost:4000/url/shorten  (POST)
+    Body : {
+    "originalUrl": "https://www.pexels.com/photo/a-woman-wearing-a-headscarf-and-long-sleeves-near-green-plants-11039194/",
+    "ip": "",
+    "os" :"",
+    "browser" : "",
+    "country" : "",
+    "city" : "",
+    "referrer": ""
+}
+
+getUrlCode : URL : localhost:4000/url/:shortId  ( GET )
+getClicks Analytics : URL : localhost:4000/url/clicks ( GET )
+
+
+Scalability Solutions
+To scale the application, the following strategies are implemented:
+
+Load Balancing: Use a load balancer (e.g., Nginx) to distribute incoming traffic across multiple instances of the application.
+Horizontal Scaling: Deploy multiple instances of the application in a container ( Docker ) and distribute the workload evenly.
+Caching: Implement caching mechanisms (e.g., Redis) to reduce the load on the database and improve response times.
+
