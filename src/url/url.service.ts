@@ -7,7 +7,7 @@ import * as crypto from 'crypto';
 @Injectable()
 export class UrlService extends PrismaClient {
   private redisClient = new Redis({
-    host: 'localhost',
+    host: 'redis',
     port: 6379,
   });
   constructor(private readonly prismaService: PrismaService) {

@@ -1,6 +1,36 @@
 version: '3.9'
 
 services:
+  app:
+    depends_on:
+      - redis
+      - dev-db
+    build:
+      dockerfile: Dockerfile
+      context: './'
+    ports:
+      - "4000:4000"
+    restart: always
+    networks:
+      - nest-js
+
+  nginx1: 
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: './nginx'
+    ports:
+      - "8002:80"
+    networks:
+      - nest-js
+  
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - nest-js
+
   dev-db:
     image: postgres:14-alpine
     ports:
@@ -15,3 +45,4 @@ services:
       - nest-js
 networks:
   nest-js:
+    driver: bridge
